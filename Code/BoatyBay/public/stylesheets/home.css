@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+header{
+    background-color:mediumaquamarine;
+    height:120px;
+    display:flex;
+    margin: 0;
+
+}
+
+header section{
+    height:100%;
+    width:100%;
+}
+
+header section a{
+    text-decoration: none;
+    color: black;
+    float: right;
+    display: block;
+    padding: 45px 150px;
+    font-size: 20;
+}
+
+#logo{
+    float: left;
+    height:120px
+}
+
+#mapid{
+    height:300px;
+}
+
+
+footer{
+    background-color: mediumaquamarine;
+    height: 50px;
+    text-align: center;
+    padding-top: 4px;
+}
