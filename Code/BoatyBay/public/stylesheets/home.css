@@ -15,7 +15,7 @@ header section{
     width:100%;
 }
 
-header section a{
+header section .bar{
     text-decoration: none;
     color: black;
     float: right;
@@ -29,9 +29,6 @@ header section a{
     height:120px
 }
 
-#mapid{
-    height:300px;
-}
 
 
 footer{
@@ -39,4 +36,16 @@ footer{
     height: 50px;
     text-align: center;
     padding-top: 4px;
+}
+
+#map {
+    height: 569px;
+    width: 500px;
+    margin: auto;
+    
+}
+#mapC {
+    height: 100%;
+    width: 100%;
+    
 }

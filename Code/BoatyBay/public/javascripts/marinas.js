@@ -1,7 +1,7 @@
 const marinas= [
     {
         name: 'Marina de Vilaoura',
-        capacity: '1000'
+        capacity: 1000
     },
 
     {
@@ -13,7 +13,7 @@ const marinas= [
 
 function createCards() {
     let main = document.getElementById('marinas');
-    for (let idx in marinas) {
+    for (let idx in marinas) {  
         main.innerHTML += makeCard(idx);
     }
 }
