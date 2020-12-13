@@ -1,0 +1,19 @@
+main {
+    grid-column: 1 / 4;
+    width: 100%;
+    display: flex;
+
+}
+
+.grade-card {
+    width: fit-content;
+    padding: 5vh;
+    background-color: mediumaquamarine;
+    background-image: url("images/SSMarina1.jpg");
+    color: black;
+    margin: 5vh;
+    cursor: pointer;
+    width: 200px;
+    height: 150px;
+    font-size: 17;
+}
