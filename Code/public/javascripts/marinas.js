@@ -1,22 +1,10 @@
-
-const marinas = [
-    {
-        name: 'Marina de Vilamoura',
-        capacity: 1000
-    },
-    {
-        name: 'Doca de Santo',
-        capacity: 200
-    }
-];
-
-
- 
-
 async function createCards() {
     let main = document.getElementById('marinasL');
-    let marinas = await fetch('http://localhost:3000/API/marinas');
-    marinas = await marinas.json(); 
+    let marinas = await $.ajax({
+        url: "/API/marinas",
+        method: "get",
+        dataType: "json"
+    });
     for (let idx in marinas) {  
         main.innerHTML += makeCard(marinas[idx]);
     }
@@ -36,7 +24,7 @@ function makeCard(marina) {
             ${marina.M_name}
         </h2>
         <p>
-            Capacity: ${marina.M_email}
+            Capacity: ${marina.M_capacity}
         </p>
         
     </div>`;

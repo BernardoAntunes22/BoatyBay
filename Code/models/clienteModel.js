@@ -32,6 +32,17 @@ Cliente.select = async () => {
     }
 };
 
+Cliente.selectByName = async (name) => {
+    try {
+        let res = await Database.query('SELECT * FROM Cliente WHERE C_Name = ?', name);
+        return res;
+    }
+    catch (err) {
+        console.log('An errror has occured while trying to SELECT FROM Clientes.\n Dumping Stack.\n', err.stack);
+        return err.message;
+    }
+};
+
 Cliente.update = async () => {
     Task.update = async (id, Cliente) => {
         try {
@@ -63,5 +74,7 @@ Cliente.delete = async (id) => {
         return err.message;
     }
 };
+
+
 
 module.exports = Cliente;

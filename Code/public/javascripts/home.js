@@ -8,7 +8,7 @@ function map() {
     }).addTo(map);
 
     var marker = L.marker([37.077355366634734, -8.12029283083673]).addTo(map);
-    marina(marker).addTo(map);
+    
 }
 
 window.onload = () => {
