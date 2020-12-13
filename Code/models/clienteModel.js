@@ -6,7 +6,7 @@ const Cliente = function (cliente) {
     this.C_Name = cliente.C_Name;
     this.C_data_nasc = cliente.C_data_nasc;
     this.C_nif = cliente.C_nif;
-    this.C_rua_nome = cliente.rua_Nome;
+    this.C_rua_nome = cliente.C_rua_Nome;
     this.C_n_policia = cliente.C_n_policia;
 };
 
