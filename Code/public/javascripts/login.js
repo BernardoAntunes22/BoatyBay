@@ -5,8 +5,10 @@ async function login() {
         method: "get",
         dataType: "json"
     });
-    if(result)
+    if(result) {
+        sessionStorage.setItem('conta', name);
         window.location = "home.html";
+    }
         
 }
 

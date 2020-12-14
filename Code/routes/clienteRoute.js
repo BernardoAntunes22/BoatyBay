@@ -18,5 +18,12 @@ router.get("/login/:name", async function(req, res) {
   let name = req.params.name;
   let clientes = await Cliente.selectByName(name);
   res.send(clientes.length > 0);
-})
+});
+
+router.get("/getByName/:name", async function(req, res) {
+  let name = req.params.name;
+  let clientes = await Cliente.selectByName(name);
+  res.send(clientes[0]);
+});
+
 module.exports = router;
