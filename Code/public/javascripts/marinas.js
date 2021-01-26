@@ -24,7 +24,7 @@ function makeCard(marina) {
             ${marina.M_name}
         </h2>
         <p>
-            Capacity: ${marina.M_capacity}
+            Capacity: ${marina.M_capacidade}
         </p>
         
     </div>`;

@@ -1,16 +1,21 @@
 var express = require('express');
 var router = express.Router();
-const Barco = require('../models/barcoModel');
+const mBarco = require('../models/barcoModel');
 
 
 /* GET users listing. */
+router.get('/getByCliente/:cliente', async function(req, res, next) {
+  let barcos = await mBarco.getByCliente(req.params.cliente);
+  res.send(barcos);
+});
+
 router.get('/', async function(req, res, next) {
-  let barcos = await Barco.select();
+  let barcos = await mBarco.select();
   res.send(barcos);
 });
 
 router.post('/', async function(req, res, next) {
-  let barcos = await Barco.create(req.body);
+  let barcos = await mBarco.create(req.body);
   res.send(barcos);
 });
 

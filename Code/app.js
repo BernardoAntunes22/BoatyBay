@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const Database = require('./models/database');
+const connection = require('./models/connection');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var clienteRoute = require('./routes/clienteRoute');
@@ -11,13 +11,7 @@ var marinaRoute = require('./routes/marinaRoute');
 var reservaRoute = require('./routes/reservaRoute');
 
 
-Database.setConnection({ 
-    host: 'remotemysql.com',
-    user: 'TWwWfg2W6b',
-    password: 'A0cJ9cV5kj',
-    database: 'TWwWfg2W6b',
-    port: '3306'
-});
+
 
 var app = express();
 
@@ -33,6 +27,8 @@ app.use('/API/clientes', clienteRoute);
 app.use('/API/marinas', marinaRoute);
 app.use('/API/reservas', reservaRoute);
 app.use('/users', usersRouter);
+
+
 module.exports = app;
 
 
