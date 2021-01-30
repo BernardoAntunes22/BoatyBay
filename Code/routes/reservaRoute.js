@@ -14,4 +14,12 @@ router.post('/', async function(req, res, next) {
   res.send(reservas);
 });
 
+
+router.get('/getByMarina/:marina', async function(req, res, next) {
+  let Rmarina = await Reserva.getByMarina(req.params.marina);
+  res.send(Rmarina);
+});
+
+
 module.exports = router;
+

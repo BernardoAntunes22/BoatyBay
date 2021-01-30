@@ -1,9 +1,22 @@
-/*var pool = require('./connection');
+var pool = require('./connection');
 
 
 
 
-Reserva.create = async (reserva) => {
+
+module.exports.getByMarina = async (marina) => {
+    try {
+        const res = await pool.query('Select * From Reserva as r inner join Marina as m on r.M_id = m.M_id inner join Cliente as c on r.C_id = c.C_id where r.M_id = ?', marina);
+        return res;
+    }
+    catch (err) {
+        console.log('An errror has occured while trying to SELECT FROM Marinas.\n Dumping Stack.\n', err.stack);
+        return err.message;
+    }
+};
+
+
+module.exports.create = async (reserva) => {
     try {
         let res = await pool.query('INSERT INTO Reserva SET ?', reserva);
         return { C_id: res.insertId, ...reserva };
@@ -14,7 +27,7 @@ Reserva.create = async (reserva) => {
     }
 };
 
-Reserva.select = async () => {
+module.exports.select = async () => {
     try {
         let res = await pool.query('SELECT * FROM Reserva');
         return res;
@@ -25,7 +38,7 @@ Reserva.select = async () => {
     }
 };
 
-Reserva.update = async () => {
+module.exports.update = async () => {
     Task.update = async (id, Reserva) => {
         try {
             let keys = Object.keys(Reserva);
@@ -46,7 +59,7 @@ Reserva.update = async () => {
     }
 }};
 
-Reserva.delete = async (id) => {
+module.exports.delete = async (id) => {
     try {
         let res = await pool.query('DELETE FROM Reservas WHERE C_id = ?', id);
         return res.affectedRows;
@@ -57,4 +70,3 @@ Reserva.delete = async (id) => {
     }
 };
 
-module.exports = Reserva;*/

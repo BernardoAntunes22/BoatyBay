@@ -1,5 +1,6 @@
 window.onload = function(){
     let cliente = JSON.parse(sessionStorage.getItem("conta"));
+    let marina = JSON.parse(sessionStorage.getItem("marinaId"));
     populateBoats(cliente)
 }
 
@@ -14,4 +15,9 @@ async function populateBoats(cliente){
         document.getElementById("boat").innerHTML += html;
 
     }
+
+}
+
+async function submit(){
+    
 }

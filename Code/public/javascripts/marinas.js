@@ -23,6 +23,7 @@ function makeCard(marina) {
         <h2>
             ${marina.M_name}
         </h2>
+        <br>
         <p>
             Capacity: ${marina.M_capacidade}
         </p>

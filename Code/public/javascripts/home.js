@@ -16,3 +16,9 @@ window.onload = () => {
     map();
 
 }
+/*
+
+for (var idx in imoveis) {
+    let imovel = imoveis[idx];
+    L.marker({ lat: imovel.IM_M_latitude, lon: imovel.IM_M_longitude }).bindPopup(<p>imovel.IM_nome</p><button onclick="mostralocalizacao(${idx})">Ver</button>).addTo(map);
+}*/
