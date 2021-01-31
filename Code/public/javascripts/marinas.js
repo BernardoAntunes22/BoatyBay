@@ -35,3 +35,8 @@ window.onload = () => {
     createCards();
     
 }
+
+function LogOut(){
+    sessionStorage.clear()
+    window.location = "index.html"
+}

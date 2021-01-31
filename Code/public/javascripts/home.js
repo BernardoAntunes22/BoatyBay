@@ -16,6 +16,12 @@ window.onload = () => {
     map();
 
 }
+
+
+function LogOut(){
+    sessionStorage.clear()
+    window.location = "index.html"
+}
 /*
 
 for (var idx in imoveis) {

@@ -6,7 +6,7 @@ var pool = require('./connection');
 
 module.exports.getByMarina = async (marina) => {
     try {
-        const res = await pool.query('Select * From Reserva as r inner join Marina as m on r.M_id = m.M_id inner join Cliente as c on r.C_id = c.C_id where r.M_id = ?', marina);
+        const res = await pool.query('Select * From Reserva as r inner join Marina as m on r.M_id = m.M_id inner join Cliente as c on r.C_id = c.C_id inner join Cod_Post as cp on m.CP_id = cp.CP_id where r.M_id = ?', marina);
         return res;
     }
     catch (err) {

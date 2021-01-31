@@ -16,8 +16,8 @@ router.post('/', async function(req, res, next) {
 
 
 router.get('/getByMarina/:marina', async function(req, res, next) {
-  let Rmarina = await Reserva.getByMarina(req.params.marina);
-  res.send(Rmarina);
+  let marina = await Reserva.getByMarina(req.params.marina);
+  res.send(marina);
 });
 
 

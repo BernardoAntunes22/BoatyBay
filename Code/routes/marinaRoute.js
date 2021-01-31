@@ -14,4 +14,12 @@ router.post('/', async function(req, res, next) {
   res.send(marinas);
 });
 
+router.get('/getCP/:marina', async function(req, res, next) {
+  let marinas = await Marina.getCP(req.params.marina);
+  res.send(marinas);
+});
+
+
+
+
 module.exports = router;

@@ -77,3 +77,14 @@ main{
     padding:0;
     margin:0;
     }
+
+.logoutLblPos{
+
+   position:fixed;
+   right:10px;
+   top:5px;
+   font-size:15px;
+   padding:10px;
+   background-color:mediumaquamarine;
+   border-radius:20px;
+}

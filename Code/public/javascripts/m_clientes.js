@@ -17,17 +17,17 @@ function makeCard(marinas) {
     let html = "";
     for(let index in marinas) {
         let marina = marinas[index];
-        html += `<div class="reservaI">
+        html += `<div class="clientesI">
             <h2>Nome: ${marina.C_Name}</h2>
-            <h3>Tipo de lugar: ${marina.R_reservaLugar}</h3>
-            <h3>Data Inicial: ${marina.R_dateInicial}</h3>
-            <h3>Data Inicial: ${marina.R_dateFinal}</h3>
-            <p>ID da Reserva: ${marina.R_id}</p>
+            <h3>Data de nascimento: ${marina.C_data_nasc}</h3>
+            <h3>NIF: ${marina.C_NIF}</h3>
+            <h3>Email: ${marina.C_Email}</h3>
+            <h3>Número de telemóvel: ${marina.C_telemovel}</h3>
         </div>`;
 }
-    document.getElementById("reservas").innerHTML = html;
+    document.getElementById("clientes").innerHTML = html;
 }
-  
+
 function LogOut(){
     sessionStorage.clear()
     window.location = "index.html"

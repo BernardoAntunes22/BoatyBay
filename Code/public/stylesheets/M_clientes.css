@@ -1,0 +1,15 @@
+#clientes{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+
+.clientesI{
+    width: 70%;
+    height: 200px;
+    background-color:#a0a0a0;
+    border: 2px solid rgb(116, 116, 116);
+    text-align: center;
+}

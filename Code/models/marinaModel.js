@@ -1,22 +1,10 @@
  var pool = require('./connection');
 
 
- //this
-const Marina = {};
 
 
-Marina.create = async (marina) => {
-    try {
-        let res = await pool.query('INSERT INTO Marina SET ?', marina);
-        return { C_id: res.insertId, ...marina };
-    }
-    catch (err) {
-        console.log('An errror has occured while trying to INSERT into Marinas.\n Dumping Stack.\n', err.stack);
-        return err.message;
-    }
-};
 
-Marina.selectByName = async (name) => {
+module.exports.selectByName = async (name) => {
     try {
         const marina = await pool.query('SELECT * FROM Marina WHERE M_Name = ?', name);
         return marina;
@@ -27,7 +15,31 @@ Marina.selectByName = async (name) => {
     }
 };
 
-Marina.select = async () => {
+module.exports.getCP= async (id) => {
+    try {
+        const marina = await pool.query('SELECT * FROM Marina as m inner join Cod_Post as c on m.CP_id = c.CP_id where m.M_id = ?',id);
+        return marina[0];
+    }
+    catch (err) {
+        console.log('An errror has occured while trying to SELECT FROM Marinas.\n Dumping Stack.\n', err.stack);
+        return err.message;
+    }
+};
+
+
+
+module.exports.create = async (marina) => {
+    try {
+        let res = await pool.query('INSERT INTO Marina SET ?', marina);
+        return { C_id: res.insertId, ...marina };
+    }
+    catch (err) {
+        console.log('An errror has occured while trying to INSERT into Marinas.\n Dumping Stack.\n', err.stack);
+        return err.message;
+    }
+};
+
+module.exports.select = async () => {
     try {
         let res = await pool.query('SELECT * FROM Marina');
         return res;
@@ -38,7 +50,7 @@ Marina.select = async () => {
     }
 };
 
-Marina.update = async () => {
+module.exports.update = async () => {
     Task.update = async (id, Marina) => {
         try {
             let keys = Object.keys(Marina);
@@ -59,7 +71,7 @@ Marina.update = async () => {
     }
 }};
 
-Marina.delete = async (id) => {
+module.exports.delete = async (id) => {
     try {
         let res = await pool.query('DELETE FROM Marinas WHERE C_id = ?', id);
         return res.affectedRows;
@@ -70,4 +82,3 @@ Marina.delete = async (id) => {
     }
 };
 
-module.exports = Marina; 

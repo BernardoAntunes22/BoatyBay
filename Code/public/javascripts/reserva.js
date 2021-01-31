@@ -21,3 +21,8 @@ async function populateBoats(cliente){
 async function submit(){
     
 }
+
+function LogOut(){
+    sessionStorage.clear()
+    window.location = "index.html"
+}
