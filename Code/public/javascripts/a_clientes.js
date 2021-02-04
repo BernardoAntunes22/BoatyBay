@@ -20,7 +20,7 @@ function reserva(id) {
 
 function makeCard(cliente) {
     return `<table>
-            <tr>
+            <tr onclick = "edit(${cliente.C_id})">
                 <td>${cliente.C_Name}</td>
                 <td>${cliente.C_data_nasc}</td>
                 <td>${cliente.C_NIF}</td>
@@ -30,6 +30,11 @@ function makeCard(cliente) {
 
         
             </table>`;
+}
+
+function edit(id){
+    sessionStorage.setItem('ClienteId', id);
+    window.location = "a_clientesEdit.html"
 }
 
 window.onload = () => {

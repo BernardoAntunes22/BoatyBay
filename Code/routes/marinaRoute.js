@@ -14,10 +14,24 @@ router.post('/', async function(req, res, next) {
   res.send(marinas);
 });
 
-router.get('/getCP/:marina', async function(req, res, next) {
+router.get('/getByCP/:marina', async function(req, res, next) {
   let marinas = await Marina.getCP(req.params.marina);
   res.send(marinas);
 });
+
+
+router.put('/:id', async function(req, res, next) {
+  console.log(req.body);
+  let marinas = await Marina.update(req.params.id, req.body);
+  res.send(marinas);
+});
+
+
+router.delete('/:id', async function(req, res, next) {
+  let marinas = await Marina.delete(req.params.id);
+  res.send({rowsAffected: marinas});
+});
+
 
 
 

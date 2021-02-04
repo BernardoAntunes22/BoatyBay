@@ -28,6 +28,8 @@ router.put('/:id', async function(req, res, next) {
   res.send(reserva);
 });
 
+
+
 router.delete('/:id', async function(req, res, next) {
   let reserva = await Reserva.delete(req.params.id);
   res.send({rowsAffected: reserva});

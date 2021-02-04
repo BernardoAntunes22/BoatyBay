@@ -20,7 +20,7 @@ window.location = 'reserva.html';
 
 function makeCard(marina) {
 return `<table>
-        <tr>
+        <tr onclick = "edit(${marina.M_id})">
             <td>${marina.M_name}</td>
             <td>${marina.M_telefone}</td>
             <td>${marina.M_email}</td>
@@ -44,4 +44,10 @@ createCards();
 function LogOut(){
 sessionStorage.clear()
 window.location = "index.html"
+}
+
+
+function edit(id){
+    sessionStorage.setItem('marinaid', id);
+    window.location = "a_marinasEdit.html"
 }

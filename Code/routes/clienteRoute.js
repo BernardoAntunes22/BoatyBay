@@ -40,4 +40,20 @@ router.get("/getByName/:name", async function(req, res) {
   res.send(clientes[0]);
 });
 
+router.get('/getByID/:cliente', async function(req, res, next) {
+  let cliente = await mCliente.getByID(req.params.cliente);
+  res.send(cliente[0]);
+});
+
+router.put('/:id', async function(req, res, next) {
+  console.log(req.body);
+  let cliente = await mCliente.update(req.params.id, req.body);
+  res.send(cliente);
+});
+
+router.delete('/:id', async function(req, res, next) {
+  let cliente = await mCliente.delete(req.params.id);
+  res.send({rowsAffected: cliente});
+});
+
 module.exports = router;

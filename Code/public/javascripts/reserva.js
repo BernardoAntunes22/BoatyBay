@@ -37,6 +37,7 @@ async function submit() {
             M_id: marina.M_id,
             B_id: barco,
         };
+        
         let res = await $.ajax({
             type: "POST",
             url: '/api/reservas',

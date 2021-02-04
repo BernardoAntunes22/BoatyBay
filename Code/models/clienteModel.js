@@ -21,32 +21,44 @@ module.exports.selectByName = async (name) => {
         return err.message;
     }
 };
-module.exports.update = async () => {
-    Task.update = async (id, Cliente) => {
-        try {
-            let keys = Object.keys(Cliente);
-            let vals = Object.values(Cliente);
-            let indexId = keys.indexOf('C_id');
-            keys.splice(indexId, 1);
-            vals.splice(indexId, 1);
-            let res = await pool.query('UPDATE Cliente SET ' + keys.join(' = ? ,') + ' = ? WHERE id = ?', [...vals, id]);
-            if (res.affectedRows == 0)
-                return 'No Clientes updated';
-            else
-                return 'Clientes updated.';
-        }
-        
+
+module.exports.getByID = async (id) => {
+    try {
+        const cliente = await pool.query('SELECT * FROM Cliente WHERE C_id = ?', id);
+        return cliente;
+    }
     catch (err) {
-        console.log('An errror has occured while trying to UPDATE Clientes.\n Dumping Stack.\n', err.stack);
+        console.log('An errror has occured while trying to SELECT FROM Clientes.\n Dumping Stack.\n', err.stack);
         return err.message;
     }
-}};
+};
 
+
+module.exports.update = async (id, cliente) => {
+    try {
+        let keys = Object.keys(cliente);
+        let vals = Object.values(cliente);
+        let indexId = keys.indexOf('C_id');
+        if(indexId != -1) {
+            keys.splice(indexId, 1);
+            vals.splice(indexId, 1);
+        }
+        let res = await pool.query('UPDATE Cliente SET ' + keys.join(' = ? ,') + ' = ? WHERE C_id = ?', [...vals, id]);
+        if (res.affectedRows == 0)
+            return 'No Clientes updated';
+        else
+            return 'Clientes updated.';
+    }
+    
+catch (err) {
+    console.log('An errror has occured while trying to UPDATE Clientes.\n Dumping Stack.\n', err.stack);
+    return err.message;
+}};
 
 
 module.exports.delete = async (id) => {
     try {
-        let res = await pool.query('DELETE FROM Clientes WHERE C_id = ?', id);
+        let res = await pool.query('DELETE FROM Cliente WHERE C_id = ?', id);
         return res.affectedRows;
     }
     catch (err) {

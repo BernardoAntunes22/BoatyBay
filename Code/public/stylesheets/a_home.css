@@ -93,3 +93,8 @@ main{
     font-size: 40px;
     padding-top: 20px;
 }
+
+#btnSubmit{
+    padding: 10px;
+    background-color: mediumaquamarine;
+}

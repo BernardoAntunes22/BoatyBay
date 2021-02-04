@@ -1,4 +1,30 @@
-#userT {
-    line-height: 60px;
-    padding-left: 50px;
+
+
+
+#clientes{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+
+.clientesI{
+    font-size: 20px;
+    width: 70%;
+    height: 250px;
+    background-color:#a0a0a0;
+    border: 2px solid rgb(116, 116, 116);
+    text-align: center;
+}
+
+main{
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    height: 100%;
+    padding-bottom: 20px;
+    height: 500px;
 }

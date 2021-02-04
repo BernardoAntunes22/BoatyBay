@@ -13,3 +13,16 @@
     border: 2px solid rgb(116, 116, 116);
     text-align: center;
 }
+
+main{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+footer{
+    margin-top: 60px;
+}

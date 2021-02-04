@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/API/barcos', barcoRoute);
 app.use('/API/clientes', clienteRoute);
-app.use('/API/marinas', marinaRoute);
+app.use('/api/marinas', marinaRoute);
 app.use('/API/reservas', reservaRoute);
 app.use('/users', usersRouter);
 

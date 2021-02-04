@@ -97,3 +97,8 @@ main section {
     height: 100%;
 }
 
+#btnSubmit{
+    padding: 10px;
+    background-color: mediumaquamarine;
+}
+

@@ -4,6 +4,8 @@ var pool = require('./connection');
 
 
 
+
+
 module.exports.getByMarina = async (marina) => {
     try {
         const res = await pool.query('Select * From Reserva as r inner join Marina as m on r.M_id = m.M_id inner join Cliente as c on r.C_id = c.C_id inner join Cod_Post as cp on m.CP_id = cp.CP_id where r.M_id = ?', marina);
@@ -64,7 +66,7 @@ module.exports.update = async (id, reserva) => {
         try {
             let keys = Object.keys(reserva);
             let vals = Object.values(reserva);
-            let indexId = keys.indexOf('C_id');
+            let indexId = keys.indexOf('R_id');
             if(indexId != -1) {
                 keys.splice(indexId, 1);
                 vals.splice(indexId, 1);

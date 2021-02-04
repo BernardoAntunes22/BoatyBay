@@ -20,8 +20,8 @@ function makeCard(marinas) {
         html += `<div class="reservaI">
             <h2>Nome: ${marina.C_Name}</h2>
             <h3>Tipo de lugar: ${marina.R_reservaLugar}</h3>
-            <h3>Data Inicial: ${marina.R_dateInicial}</h3>
-            <h3>Data Inicial: ${marina.R_dateFinal}</h3>
+            <h3>Data Inicial: ${getDate(marina.R_dateInicial)}</h3>
+            <h3>Data Inicial: ${getDate(marina.R_dateFinal)}</h3>
             <p>ID da Reserva: ${marina.R_id}</p>
         </div>`;
 }
@@ -31,4 +31,8 @@ function makeCard(marinas) {
 function LogOut(){
     sessionStorage.clear()
     window.location = "index.html"
+}
+
+function getDate(data) {
+    return data.substring(data.indexOf('T'), -1);
 }

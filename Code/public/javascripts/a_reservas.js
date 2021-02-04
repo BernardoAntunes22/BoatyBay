@@ -20,8 +20,8 @@ function makeCard(reserva) {
             <tr onclick = "edit(${reserva.R_id})">
                 <td>${reserva.M_name}</td>
                 <td>${reserva.C_Name}</td>
-                <td>${reserva.R_dateInicial}</td>
-                <td>${reserva.R_dateFinal}</td>
+                <td>${getDate(reserva.R_dateInicial)}</td>
+                <td>${getDate(reserva.R_dateFinal)}</td>
                 <td>${reserva.R_reservaLugar}</td>
                 <td>${reserva.C_telemovel}</td>
             </tr>
@@ -43,4 +43,8 @@ function LogOut(){
 function edit(id){
     sessionStorage.setItem('reservaId', id);
     window.location = "a_reservasEdit.html"
+}
+
+function getDate(data) {
+    return data.substring(data.indexOf('T'), -1);
 }
