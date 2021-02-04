@@ -15,11 +15,33 @@ module.exports.getByMarina = async (marina) => {
     }
 };
 
+module.exports.getByid = async (id) => {
+    try {
+        const res = await pool.query('Select * From Reserva Where R_id = ?', id);
+        return res;
+    }
+    catch (err) {
+        console.log('An errror has occured while trying to SELECT FROM Marinas.\n Dumping Stack.\n', err.stack);
+        return err.message;
+    }
+};
+
+module.exports.getEvery = async () => {
+    try {
+        const res = await pool.query('Select * from Reserva as r inner join Cliente as c on r.C_id = c.C_id inner join Marina as m on r.M_id = m .M_id');
+        return res;
+    }
+    catch (err) {
+        console.log('An errror has occured while trying to SELECT FROM Marinas.\n Dumping Stack.\n', err.stack);
+        return err.message;
+    }
+};
+
 
 module.exports.create = async (reserva) => {
     try {
         let res = await pool.query('INSERT INTO Reserva SET ?', reserva);
-        return { C_id: res.insertId, ...reserva };
+        return { R_id: res.insertId, ...reserva };
     }
     catch (err) {
         console.log('An errror has occured while trying to INSERT into Reservas.\n Dumping Stack.\n', err.stack);
@@ -38,15 +60,16 @@ module.exports.select = async () => {
     }
 };
 
-module.exports.update = async () => {
-    Task.update = async (id, Reserva) => {
+module.exports.update = async (id, reserva) => {
         try {
-            let keys = Object.keys(Reserva);
-            let vals = Object.values(Reserva);
+            let keys = Object.keys(reserva);
+            let vals = Object.values(reserva);
             let indexId = keys.indexOf('C_id');
-            keys.splice(indexId, 1);
-            vals.splice(indexId, 1);
-            let res = await pool.query('UPDATE Reserva SET ' + keys.join(' = ? ,') + ' = ? WHERE id = ?', [...vals, id]);
+            if(indexId != -1) {
+                keys.splice(indexId, 1);
+                vals.splice(indexId, 1);
+            }
+            let res = await pool.query('UPDATE Reserva SET ' + keys.join(' = ? ,') + ' = ? WHERE R_id = ?', [...vals, id]);
             if (res.affectedRows == 0)
                 return 'No Reservas updated';
             else
@@ -56,12 +79,11 @@ module.exports.update = async () => {
     catch (err) {
         console.log('An errror has occured while trying to UPDATE Reservas.\n Dumping Stack.\n', err.stack);
         return err.message;
-    }
 }};
 
 module.exports.delete = async (id) => {
     try {
-        let res = await pool.query('DELETE FROM Reservas WHERE C_id = ?', id);
+        let res = await pool.query('DELETE FROM Reserva WHERE R_id = ?', id);
         return res.affectedRows;
     }
     catch (err) {

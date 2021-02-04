@@ -1,0 +1,25 @@
+#clientes{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+
+main{
+    padding-top: 60px;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+border: 3px solid #bbbbbb;
+text-align: left;
+padding: 15px;
+}
+

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const mCliente = require('../models/clienteModel');
 const mMarina = require('../models/marinaModel');
+const mAdmin = require('../models/adminModel');
 
 
 /* GET users listing. */
@@ -14,6 +15,7 @@ router.get("/login/:name", async function(req, res) {
   let name = req.params.name;
   let clientes = await mCliente.selectByName(name);
   let marinas = await mMarina.selectByName(name);
+  let admin = await mAdmin.selectByName(name)
 
   let response = 'Failed';
   if(clientes.length > 0){
@@ -24,6 +26,10 @@ router.get("/login/:name", async function(req, res) {
     response = marinas[0];
     response.accountType = "Marina";
   } 
+  else if(admin.length > 0){
+    response = admin[0];
+    response.accountType = "Administrador"
+  }
 
   res.send(response);
 });

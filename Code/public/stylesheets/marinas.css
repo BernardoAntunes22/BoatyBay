@@ -3,8 +3,10 @@ main {
     display: flex;
     flex-flow: wrap;
     justify-content: space-around;
-
+    height: 100%;
+    padding-bottom: 20px;
 }
+
 
 .grade-card {
     padding: 5vh;

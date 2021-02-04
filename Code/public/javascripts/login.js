@@ -17,12 +17,16 @@ async function login() {
     else if(result.accountType == 'Marina') {
         sessionStorage.setItem('conta', JSON.stringify(result));
         window.location = "m_home.html";
+    }
+    else if(result.accountType == 'Administrador') {
+        sessionStorage.setItem('conta', JSON.stringify(result));
+        window.location = "a_home.html";
 
-        console.log("qqdcoisa");
+        
     }
     else {
-        //Login falhado
-        console.log("qqdcoisa");
+        alert('Tentas-te')
+        
     }
         
 }

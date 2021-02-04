@@ -1,0 +1,35 @@
+#reservas{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.reservaI{
+    width: 70%;
+    height: 200px;
+    background-color:#a0a0a0;
+    border: 2px solid rgb(116, 116, 116);
+    text-align: center;
+}
+
+.reservaI p{
+    text-align: right;
+    padding-right: 15px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+border: 3px solid #bbbbbb;
+text-align: left;
+padding: 15px;
+}
+
+main{
+    padding-top: 60px;
+}

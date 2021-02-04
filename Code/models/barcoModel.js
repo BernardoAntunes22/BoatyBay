@@ -38,6 +38,17 @@ module.exports.select = async () => {
     }
 };
 
+module.exports.selectById = async (id) => {
+    try {
+        let res = await pool.query('SELECT * FROM Barco WHERE B_id = ?', id);
+        return res[0];
+    }
+    catch (err) {
+        console.log('An errror has occured while trying to SELECT FROM Barcos.\n Dumping Stack.\n', err.stack);
+        return err.message;
+    }
+};
+
 module.exports.update = async () => {
     Task.update = async (id, Barco) => {
         try {

@@ -1,10 +1,11 @@
-<head>
+ <head>
   <title>Reserva</title>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   <link rel="stylesheet" type="text/css" href="stylesheets/home.css" />
   <link rel="stylesheet" type="text/css" href="stylesheets/reserva.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="javascripts/reserva.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
     </section>
   </header>
   <main>
-    <form id="reserva">
+    <div id="reserva">
         <div>
             
             <label for="boat"><h3>Select Boat</h3></label>
@@ -33,23 +34,23 @@
         <div>
             <h2>Date</h2>
 
-            <label for="reservDate"><h3>Chegada: </h3></label>
-            <input type="date" id="reservDate" name="reservDate">
+            <label for="reservDate"><h3>Chegada:  </h3></label>
+            <input type="input" id="reservDate" name="reservDate" />
 
             <!-- Jquery Datepicker -->
 
             <label for="endDate"><h3>Saida: </h3></label>
-            <input type="date" id="endDate" name="endDate">
+            <input type="input" id="endDate" name="endDate" />
             <br><br>
 
-            <input type="button" value="Submit" id="submit" onclick="submit()">
+            <input type="button" value="Submit" id="btnSubmit" onclick="submit()" />
             <p></p>
         </div>
 
 
 
 
-    </form>
+    </div>
   </main>
   <footer>
     <p>
@@ -57,5 +58,6 @@
         >information@boatybay.pt</a
       >) or telephone (<a href="callto:2112312312">2112312312</a>)
     </p>
+    <script src="javascripts/reserva.js"></script>
   </footer>
 </body>
