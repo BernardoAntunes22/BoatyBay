@@ -16,16 +16,7 @@ module.exports.getByCliente = async (cliente) => {
     }
 };
 
-module.exports.create = async (barco) => {
-    try {
-        let res = await pool.query('INSERT INTO Barco SET ?', barco);
-        return { C_id: res.insertId, ...barco };
-    }
-    catch (err) {
-        console.log('An errror has occured while trying to INSERT into Barcos.\n Dumping Stack.\n', err.stack);
-        return err.message;
-    }
-};
+
 
 module.exports.select = async () => {
     try {

@@ -17,7 +17,7 @@ module.exports.selectByName = async (name) => {
 
 module.exports.getCP= async (id) => {
     try {
-        const marina = await pool.query('select * from Marina as m inner join Cod_Post as c on m.CP_id = c.CP_id Where m.M_id = 1',id);
+        const marina = await pool.query('select * from Marina as m inner join Cod_Post as c on m.CP_id = c.CP_id Where m.M_id = ?',id);
         return marina[0];
     }
     catch (err) {
@@ -28,16 +28,7 @@ module.exports.getCP= async (id) => {
 
 
 
-module.exports.create = async (marina) => {
-    try {
-        let res = await pool.query('INSERT INTO Marina SET ?', marina);
-        return { C_id: res.insertId, ...marina };
-    }
-    catch (err) {
-        console.log('An errror has occured while trying to INSERT into Marinas.\n Dumping Stack.\n', err.stack);
-        return err.message;
-    }
-};
+
 
 module.exports.select = async () => {
     try {

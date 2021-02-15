@@ -2,8 +2,6 @@ var pool = require('./connection');
 
 
 
-
-
 module.exports.selectByName = async (name) => {
     try {
         const admin = await pool.query('SELECT * FROM Administrador WHERE A_nome = ?', name);

@@ -33,6 +33,11 @@ function LogOut(){
   window.location = "index.html"
 }
 
+
+function seaR(){
+  window.location = "c_reservas.html"
+}
+
 function getDate(data) {
   return data.substring(data.indexOf('T'), -1);
 }

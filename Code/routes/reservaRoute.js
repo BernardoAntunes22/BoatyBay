@@ -28,7 +28,10 @@ router.put('/:id', async function(req, res, next) {
   res.send(reserva);
 });
 
-
+router.get('/getByCliente/:reserva', async function(req, res, next) {
+  let reserva = await Reserva.getByCliente(req.params.reserva);
+  res.send(reserva);
+});
 
 router.delete('/:id', async function(req, res, next) {
   let reserva = await Reserva.delete(req.params.id);

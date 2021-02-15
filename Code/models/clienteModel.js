@@ -6,7 +6,7 @@ module.exports.getByCliente = async () => {
         return cliente;
     }
     catch (err) {
-        console.log('An errror has occured while trying to SELECT FROM Clientes.\n Dumping Stack.\n', err.stack);
+        console.log('An error has occured while trying to SELECT FROM Clientes.\n Dumping Stack.\n', err.stack);
         return err.message;
     }
 };
@@ -17,7 +17,7 @@ module.exports.selectByName = async (name) => {
         return cliente;
     }
     catch (err) {
-        console.log('An errror has occured while trying to SELECT FROM Clientes.\n Dumping Stack.\n', err.stack);
+        console.log('An error has occured while trying to SELECT FROM Clientes.\n Dumping Stack.\n', err.stack);
         return err.message;
     }
 };
@@ -28,7 +28,7 @@ module.exports.getByID = async (id) => {
         return cliente;
     }
     catch (err) {
-        console.log('An errror has occured while trying to SELECT FROM Clientes.\n Dumping Stack.\n', err.stack);
+        console.log('An error has occured while trying to SELECT FROM Clientes.\n Dumping Stack.\n', err.stack);
         return err.message;
     }
 };

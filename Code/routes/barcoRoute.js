@@ -14,10 +14,7 @@ router.get('/', async function(req, res, next) {
   res.send(barcos);
 });
 
-router.post('/', async function(req, res, next) {
-  let barcos = await mBarco.create(req.body);
-  res.send(barcos);
-});
+
 
 
 module.exports = router;

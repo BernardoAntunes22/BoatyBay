@@ -45,7 +45,7 @@ async function submit() {
             dataType: 'json',
             contentType: "application/json"
         });
-        if(res.R_id) {
+        if(res.insertId) {
             alert('Reserva feita!');
         }
         else {
