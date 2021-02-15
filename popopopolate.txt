@@ -1,0 +1,97 @@
+insert into Cod_Post values(1, 4567, 321, 'Rua Joao Apolinario', 'RC A Ed/A' );
+insert into Cod_Post values(2, 2000, 320, 'Rua do Choupal', 'Lote 18');
+insert into Cod_Post values(3, 2000, 321, 'Rua 1', 'n61, primeiro esq');
+insert into Cod_Post values(4, 2925, 627, 'Rua das Pevides', 'n108, RC esq');
+insert into Cod_Post values(5, 1500, 951, 'Rua do Chines', 'n11, 1500');
+insert into Cod_Post values(6, 5500, 789, 'Rua do Muculmano', 'n666, terceiro dir');
+insert into Cod_Post values(7, 3200, 258, 'Rua do Zuca', 'Lote 15');
+insert into Cod_Post values(8, 2725, 151, 'Rua do Joao Pestana', 'Lote 105');
+insert into Cod_Post values(9, 2255, 525, 'Rua do VDL', 'Mansao 15');
+insert into Cod_Post values(10, 1918, 252, 'Rua do Santo', 'Lote 78');
+insert into Cod_Post values(11, 4548, 804, 'Rua do Dragaum', 'Lote 49');
+insert into Cod_Post values(12, 1231, 321, 'Rua da Baia', 'Lote 500');
+insert into Cod_Post values(13, 2426, 853, 'Rua de Chelas', 'Lote 78');
+insert into Cod_Post values(14, 1455, 358, 'Rua da Bandeira', 'n15, RC ESQ');
+insert into Cod_Post values(15, 1666, 666, 'Rua do Paraiso', 'n175, 11º ESQ');
+insert into Cod_Post values(16, 1999, 999, 'Rua do Cemiterio', 'n175, 10º DIR');
+insert into Cod_Post values(17, 1459, 751, 'Rua da Vida', 'n14, 1º DIR');
+insert into Cod_Post values(18, 1214, 131, 'Rua WestSide', 'n11, 2º DIR');
+insert into Cod_Post values(19, 1844, 328, 'Rua 8Mile', 'n8, 8º ESQ');
+insert into Cod_Post values(20, 2324, 821, 'Rua das Cegonhas', 'l. 1000');
+insert into Cod_Post values(21, 1965, 541, 'Rua dos Mirtilios', 'l. 250');
+insert into Cod_Post values(22, 1785, 381, 'Rua dos Rosados', 'l. 950');
+
+
+
+
+
+	
+insert into Cliente values(1, 'Salvador Martona', '1957-04-18', 123456789, 'martonaS@gmail.com', 969895931, 1);
+insert into Cliente values(2, 'Salvador Martinha', '1957-04-18', 123456710, 'martinhaS@gmail.com', 961514412, 2);
+insert into Cliente values(3, 'Jonh Doe', '1983-02-23',  289321456, 'DoeJ@gmail.com', 919929397, 4);
+insert into Cliente values(4, 'Maria Joana', '1965-04-30',  189156123, 'Marijuana@gmail.com', 934546487, 6);
+insert into Cliente values(5, 'Maria Rita', '1945-07-13',  189112233, 'MariCocacola@gmail.com', 937457186, 7);
+insert into Cliente values(6, 'Pedro Bispo', '1999-12-11',  275224449, 'concerto.info.bispo@gmail.com', 962608967, 8);
+insert into Cliente values(7, 'Antonio Maria', '2001-05-18',  275524779, 'FilhoDaGuida@9miller.com', 967458521, 9);
+insert into Cliente values(8, 'Barbara Bandeira', '2000-05-28',  275999559, 'BBandeira@kacha.com', 967452881, 14);
+insert into Cliente values(9, 'Sara Carreira', '1999-12-05',  275666666, 'sarinah@gmail.com', 967455451, 15);
+insert into Cliente values(10, 'Ivinho Lucas', '1989-01-25',  275999999, 'ivooooo@hotmail.com', 914569874, 16);
+insert into Cliente values(11, 'Angelico Rodrigues', '1969-01-05',  189965213, 'Angelicoparaiso@gmail.com', 914451234, 17);
+insert into Cliente values(12, 'Biggie Smalls', '1929-12-08',  189915153, 'MyTuPAC@gmail.com', 936547895, 18);
+insert into Cliente values(13, 'Marchall Matters', '1968-02-28',  178915453, 'BRABBIT@hotmail.com', 925845487, 19);
+
+
+
+
+
+insert into Log_in values(1, 'SMinha@gmail.com', '3456789', 2);
+insert into Log_in values(2, 'STona@gmail.com', '123456789', 1);
+
+insert into Marina values(1, 'Marina de Vilamoura', 00351988888888, 'MarinaVM@gmail.com', 1000, 100, 200, 700, 37.07706433613492, -8.121033119962377, 3);    
+insert into Marina values(2, 'Marina de Portimao', 00351212427282, 'MarinaPTM@gmail.com', 550, 150, 200, 200, 37.121666400479775, -8.526364130926279, 5);
+insert into Marina values(3, 'Marina do Bom Sucesso', 00351212526243, 'Marina@BomSucesso.com', 250, 100, 100, 50, 38.693118642457264, -9.211935300436243, 10 );
+insert into Marina values(4, 'Marina Porto Atlantico', 00351242526243, 'Marina@PAtlantico.com', 700, 300, 250, 150, 41.186940975022594, -8.706238844295424, 11 );
+insert into Marina values(5, 'Marina De Cascais', 00351217478753, 'MarinadeCascais@Cascais.com', 1500, 700, 350, 450, 38.69285068684786, -9.417037734760813, 12 );
+insert into Marina values(6, 'Marina De Marvila', 00351216845323, 'MMarvila@STK.com', 269, 100, 129, 40, 38.74019366563501, -9.099814829877579, 13 );
+insert into Marina values(7, 'Marina de Troia', 00351212584963, 'Marina@Troia.pt', 50, 10, 20, 10, 38.494058097890694, -8.902250342522255, 20);
+insert into Marina values(8, 'Marina de Peniche', 00351227845699, 'Marina@Peniche.pt', 150, 70, 30, 50, 39.3530315367874, -9.37800515969725, 21);
+insert into Marina values(9, 'Marina de Viana do Castelo', 00351214913572, 'Marina@VCastelo.pt', 200, 150, 150, 100, 41.69377030481342, -8.822226757599832, 22);
+
+
+insert into Cat_Barco values(1, 'Iate');
+insert into Cat_Barco values(2, 'veleiro');
+insert into Cat_Barco values(3, 'Catamarã');
+insert into Cat_Barco values(4, 'insuflado a motor');
+insert into Cat_Barco values(5, 'Barco de pesca');
+
+
+
+insert into Barco values(1, 'Martinha', 'medium', '2018-01-05',1, 1);
+insert into Barco values(2, 'PTM', 'large', '2018-01-05',1, 1);
+insert into Barco values(3, 'Biju', 'Small', '2011-11-15',4, 2);
+insert into Barco values(4, 'Who?', 'large', '2007-09-02',3, 3);
+insert into Barco values(5, 'Legale', 'medium', '2013-03-14', 2, 4);
+insert into Barco values(6, 'Sail Cross', 'small', '2020-12-31',5, 5);
+insert into Barco values(7, 'Boaty', 'large', '2014-01-05', 1, 6);
+insert into Barco values(8, 'Zambuja', 'small', '2001-01-01',4, 7);
+insert into Barco values(9, 'BFF', 'medium', '2020-12-05',1, 8);
+insert into Barco values(10, 'Gone', 'large', '2012-06-27',3, 9);
+insert into Barco values(11, 'Sun Sail', 'small', '2017-09-18',5, 10);
+insert into Barco values(12, 'A1', 'large', '2011-10-16',2, 11);
+insert into Barco values(13, 'East Side', 'medium', '1997-11-14',5, 12);
+insert into Barco values(14, 'Snoop', 'large', '2002-03-12',3, 13);
+
+
+
+Insert into Reserva values (1, '2021-01-03', '2021-01-03', 'large',1,1,1);
+Insert into Reserva values (2, '2021-02-05', '2021-02-12', 'large',6,8,7);
+Insert into Reserva values (3, '2021-02-15', '2021-02-21', 'medium',4,5,5);
+Insert into Reserva values (4, '2021-03-02', '2021-03-22', 'small',10,2,11);
+Insert into Reserva values (5, '2021-03-11', '2021-03-19', 'large',9,6,10);
+Insert into Reserva values (6, '2021-05-17', '2021-07-09', 'small',3,1,4);
+Insert into Reserva values (7, '2021-04-23', '2021-04-27', 'medium,',12,6,13);
+Insert into Reserva values (8, '2021-02-13', '2021-02-23', 'large',6,1,7);
+
+
+Insert into Administrador values (1, 'Bernardo Antunes');
+Insert into Administrador values (2, 'Bernardo Branco');

@@ -1,0 +1,117 @@
+DROP TABLE Reserva;
+DROP TABLE Fatura;
+DROP TABLE Barco;
+DROP TABLE Cat_Barco;
+DROP TABLE Marina;
+DROP TABLE Log_in;
+DROP TABLE Administrador;
+DROP TABLE Cliente;
+Drop TABLE Cod_Post;
+
+
+
+CREATE TABLE Cod_Post
+(
+  CP_id INT PRIMARY KEY,
+  CP_4 VARCHAR(4) NOT NULL,
+  CP_3 VARCHAR(3) NOT NULL,
+  CP_l1 varchar(200) NOT NULL,
+  CP_l2 varchar(200) NOT NULL
+  
+);
+
+CREATE TABLE Cliente
+(
+  PRIMARY KEY (C_id),
+  C_id  INT auto_increment,
+  C_Name VARCHAR(150) NOT NULL,
+  C_data_nasc DATE NOT NULL,
+  C_NIF VARCHAR(9) NOT NULL,
+  C_Email VARCHAR(200) NOT NULL,
+  C_telemovel VARCHAR(13),
+  CP_id int NOT NULL,
+  FOREIGN KEY(CP_id) REFERENCES Cod_Post(CP_id) ON DELETE CASCADE
+);
+
+CREATE TABLE Marina
+(
+  PRIMARY KEY (M_id),
+  M_id INT NOT NULL auto_increment,
+  M_name VARCHAR(150) NOT NULL,
+  M_telefone VARCHAR(13) NOT NULL,
+  M_email VARCHAR(150) NOT NULL,
+  M_capacidade int NOT NULL,
+  M_lugarPeq int,
+  M_lugarMed int NOT NULL,
+  M_lugarGra int, 
+  M_lat FLOAT(10, 6) not null,
+  M_long FLOAT(10, 6) not null,
+  CP_id int NOT NULL,
+  FOREIGN KEY(CP_id) REFERENCES Cod_Post(CP_id),
+  constraint CHK_Marina CHECK (M_lugarGra + M_lugarPeq + M_lugarMed = M_capacidade)
+);
+
+CREATE TABLE Administrador
+(
+	primary key (A_id),
+    A_id int,
+    A_nome varchar(37)
+);    
+
+CREATE TABLE Fatura
+(
+  PRIMARY KEY (F_id),
+  F_date DATE default (curdate()),
+  F_id  INT NOT NULL auto_increment,
+  Cliente_id INT NOT NULL,
+  Cliente_nome VARCHAR(100),
+  FOREIGN KEY (Cliente_id) REFERENCES Cliente(C_id) on delete cascade
+);
+
+CREATE TABLE Log_in
+(
+  PRIMARY KEY (L_id),
+  L_id  INT NOT NULL auto_increment,
+  L_email VARCHAR(200) NOT NULL,
+  L_password varchar(18) NOT NULL check (L_password > 7),
+  C_id  INT NOT NULL,
+  FOREIGN KEY (C_id) REFERENCES Cliente(C_id) on delete cascade
+);
+
+
+
+CREATE TABLE Cat_Barco
+(
+  PRIMARY KEY (Cat_id),
+  Cat_id  INT NOT NULL auto_increment,
+  Cat_nome VARCHAR(200) NOT NULL
+);
+
+
+CREATE TABLE Barco
+(
+  PRIMARY KEY (B_id),
+  B_id  INT NOT NULL auto_increment,
+  B_nome varchar(60) NOT NULL,
+  B_size varchar(10) NOT NULL CHECK (B_size IN('small', 'medium', 'large')),
+  B_ano DATE NOT NULL,
+  Cat_id INT NOT NULL,
+  C_id int NOT NULL,
+  FOREIGN KEY (C_id) REFERENCES Cliente(C_id) ON DELETE CASCADE,
+  FOREIGN KEY (Cat_id) REFERENCES Cat_Barco(Cat_id) ON DELETE CASCADE
+);
+
+CREATE TABLE Reserva
+(
+  PRIMARY KEY (R_id),
+  R_id INT NOT NULL auto_increment,
+  R_dateInicial DATE NOT NULL,
+  R_dateFinal DATE NOT NULL,
+  R_reservaLugar varchar(10) NOT NULL CHECK (R_reservaLugar IN('small', 'medium', 'large')),
+  C_id INT NOT NULL,
+  M_id INT NOT NULL,
+  B_id INT NOT NULL,
+  FOREIGN KEY (C_id) REFERENCES Cliente(C_id) on delete cascade,
+  FOREIGN KEY (M_id) REFERENCES Marina(M_id) on delete cascade,
+  FOREIGN KEY (B_id) REFERENCES Barco(B_id) ON DELETE CASCADE
+);
